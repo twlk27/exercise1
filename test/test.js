@@ -21,14 +21,15 @@ describe('assert', function () {
       }
     }
     // 修改下面代码使得满足测试描述
-    assert.equal(a.c.e, b.c.e)
+    assert.deepEqual(a, b)
   })
 
   it('可以捕获并验证函数fn的错误', function () {
     function fn() {
-      var xxx
+      xxx
     }
     // 修改下面代码使得满足测试描述
-    fn()
+    // fn()
+    assert.throws(fn, /xxx is not defined/, '');
   })
 })
